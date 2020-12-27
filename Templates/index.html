@@ -1,0 +1,145 @@
+{% load static %}
+{% static "image" as baseUrl %}
+{% load instagram_client %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+    <link rel="stylesheet" href="{% static '/css/timeline.css' %}">
+    <link rel="stylesheet" href="{% static '/css/skills.css' %}">
+    
+    <title>Rohit Yadav</title>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="{{baseUrl}}/{{ Logo.img }}" alt="logo" srcset="">
+    </div>
+    <div class="social">
+        <i class="fab fa-google"></i>
+    </div>
+    <div id="flex-Box" id="top">
+        <div class="section">
+            <div class="container">
+                <div class="in-section">
+                    <div class="section-flex-box">
+                        <div class="nav"><a href="#">Home</a></div>
+                        <div class="nav"><a href="#about">About me</a></div>
+                        <div class="nav"><a href="#education">Education</a></div>
+                        <div class="nav"><a href="#skill">Skills</a></div>
+                        <div class="nav"><a href="#exp">Experience & Projects </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section2" id="about">
+            <div class="container">
+                <div class="section2-flex-box">
+                    <div class="left">
+                        <h3>About Me</h3>
+                        Hi, I am <b>Rohit Yadav</b> a Computer Engineering student from Shree L.R. Tiwari College Of
+                        Engineering.I started coding 3 years ago in 2017.
+                        I am a <b>Web Designer </b>and <b> Developer</b>
+                        I have worked on few personal Projects and made some interative web applications and websites.
+
+                    </div>
+                    <div class="right">
+                        <img src="/static/image/Webdev.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section3" id="education">
+            <div class="container">
+                <h3>Education</h3>
+                <div class="timeline">
+                    <div class="econtainer eleft">
+                        <div class="content">
+                            <h3>2014</h3>
+                            <hr>
+                            <p>
+                                <b>SSC</b> <br>
+                                <b>Board</b>:- Maharashtra Board <br>
+                                <b>Grade</b>:- 86% <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="econtainer eright">
+                        <div class="content">
+                            <h3>2016</h3>
+                            <hr>
+                            <p>
+                                <b>HSC</b> <br>
+                                <b>Board</b>:- Maharashtra Board <br>
+                                <b>Grade</b>:- 70.92% <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="econtainer eleft">
+                        <div class="content">
+                            <h3>2020</h3>
+                            <hr>
+                            <p>
+                                <b>B.Tech</b> Persuing <br>
+                                <b>University</b>:- Mumbai University <br>
+                                <b>CGPA</b>:- 6.88/10
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section4" id="skill">
+                <div class="container">
+                    <H3>Skills</H3>
+                    <div class="insec4">
+                        {% for skill in Skill %}
+                        <div class="card">
+                            <div class="front">
+                                <div class="img">
+                                    <img src="{{baseUrl}}/{{ skill.img }}" alt="{{skill.name}}" srcset="">
+                                </div>
+                                <h3>{{skill.name}}</h3>
+                            </div>
+                            <div class="back">
+                                <h3>{{skill.name}}</h3>
+                                <hr>
+                                <h4>Experience Level</h4>
+                                <p>{{skill.exp}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="section5" id="exp">
+                    <div class="container">
+                        <h3>Projects</h3>
+                        <div class="proex">
+                            {% for pros in Projects %}
+                            <div class="projects p1">
+                                <h4>{{pros.year}}</h4>
+                                <p>{{pros.topic}}</p>
+                                <button  id="mybtn"  onclick="myfun('{{pros}}')" class="btn">Know More</button>
+                            </div>
+                            <div id="myModal-{{pros}}" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                  <span class="close" onclick="closefun('{{pros}}')">&times;</span>
+                                  <p>{{pros.detail}}</p>
+                                </div>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+       
+            
+            <button onclick="topFunction()" id="myBtn" title="Go to top"></button>
+            <script src="{% static '/js/index.js' %}">
+            </script>
+</body>
+</html>
