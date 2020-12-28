@@ -72,14 +72,14 @@ def home(request):
     projects2 = Project()
     projects2.topic = "Calculator Mobile Application"
     projects2.year = 2018
-    projects2.detail = ""
+    projects2.detail = "This Calculator app is an application developed for android cells phones and tablets. It enables the users to perform fundamental mathematical operations such as addition, subtraction, multiplication and division on their phone. Being installed on phone, it always remains with the user, helps in daily life calculations and works as a typical android calculator app."
     projects2.icon1 = "java"
     projects2.icon2 = "android"
     
     projects3 = Project()
     projects3.topic = "Quiz WebApplication "
     projects3.year = 2019
-    projects3.detail = ""
+    projects3.detail = "The Online Quiz is a web application for candidate to appear for an online test in an effective way and there is no loss of time to check the paper. The chief aim of Online Quiz is to effectively estimate the candidate completely via a totally automated system which besides preserving time, offers swifter outcomes. The Application was Developed using following languages"
     projects3.icon1 = "js"
     projects3.icon2 = "html5"
     projects3.icon3 = "css3-alt"
