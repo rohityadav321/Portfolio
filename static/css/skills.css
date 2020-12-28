@@ -160,7 +160,6 @@
   .details{
       display: flex;
       flex-direction: row;
-      width: 100%;
   }
   .indet{
       width: 60%;
