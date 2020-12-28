@@ -30,7 +30,7 @@
     position: absolute;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    box-shadow: 3px 3px 10px #333;
+    box-shadow: 1px 1px 2px #333;
 }
 /* .front:nth-child(even){
     background: linear-gradient(red,pink);
@@ -71,19 +71,19 @@
     flex-wrap: wrap;
     width: 90%;
     margin: auto;
-    color: #000;
+    color: #fff;
 }
 
 .projects{
     position: relative;
     width: 200px;
     height: auto;
-    background: #fff;
+    background: #333;
     border-radius: 24px;
     margin: 20px;
     text-align: center;
     padding: 5px;
-    box-shadow:  3px 3px 10px #fff;
+    box-shadow:  2px 2px 2px #fff;
 }
 .btn{
     position: relative;
@@ -136,7 +136,7 @@
     border-radius: 24px;
     color: #000;
     width: 60%;
-    height: 80%;
+    height: auto;
     animation: fly 0.5s ease-in-out;
   }
   @keyframes  fly{
@@ -157,3 +157,80 @@
     text-decoration: none;
     cursor: pointer;
   }
+  .details{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+  }
+  .indet{
+      width: 60%;
+      margin: 5px;
+      padding: 5px;
+  }
+.details>img{
+    width: 40%;
+    margin: 5px;
+    height: 100%;
+}
+.fab{
+    font-size:25px;
+    margin: 0 3px 0 3px;
+}
+.fa-html5{
+    color: rgb(255, 94, 0);
+}
+.fa-css3-alt{
+    color:blue;
+}
+.fa-js{
+    color:rgb(255, 196, 0);
+}
+.fa-php{
+    color:rgb(87, 87, 243);
+}
+.fa-database{
+    color:rgb(0, 255, 179);
+}
+.fa-java{
+    color:red;
+}
+.fa-android{
+    color:rgb(15, 230, 15)
+}
+@media screen and (max-width: 600px) {
+    
+    .modal-content {
+        margin: auto;
+        padding: 10px;
+        width: 90%;
+        height: auto;
+      }
+    .details{
+        flex-direction: column;
+        font-size: 14px;
+    }
+    .indet{
+        width: 100%;
+        padding: 5px;
+    }
+  .details>img{
+      width: 100%;
+  }
+  }
+  @media screen and (min-width: 601px) and (max-width: 900px) {
+    
+    .details{
+        display: flex;
+        flex-direction: row;
+    }
+    .indet{
+        width: 60%;
+        margin: 5px;
+        padding: 5px;
+    }
+  .details>img{
+      width: 40%;
+      margin: 5px;
+  }
+  }
+  

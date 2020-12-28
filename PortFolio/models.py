@@ -12,3 +12,8 @@ class Project:
     year:int
     topic:str
     detail:str
+    icon1:str
+    icon2:str
+    icon3:str
+    icon4:str
+    icon5:str
