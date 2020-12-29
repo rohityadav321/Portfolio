@@ -15,12 +15,83 @@ function scrollFunction() {
 }
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
+function topFunction(){
   document.documentElement.scrollTo({
     top: 0,
     behavior: "smooth",
   });
 }
+function home() {
+  document.documentElement.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+var x= window.matchMedia("(max-width:650px)");
+var y=window.matchMedia("(min-width:651px) and (max-width:900px)");
+
+function about() {
+  if(y.matches){
+    document.documentElement.scrollTo({
+      top: 430,
+      behavior: "smooth",
+    });
+  }
+  else if(x.matches){
+    document.documentElement.scrollTo({
+      top: 480,
+      behavior: "smooth",
+    });
+  }
+  else{
+    document.documentElement.scrollTo({
+      top: 570,
+      behavior: "smooth",
+    });
+  }
+}
+function edu() {
+  if(y.matches){
+    document.documentElement.scrollTo({
+      top: 1040,
+      behavior: "smooth",
+    });
+  }
+  else{
+    document.documentElement.scrollTo({
+      top: 1000,
+      behavior: "smooth",
+    });
+  }
+}function skill() {
+  if(y.matches){
+    document.documentElement.scrollTo({
+      top: 1750,
+      behavior: "smooth",
+    });
+  }
+  else{
+    document.documentElement.scrollTo({
+      top: 1670,
+      behavior: "smooth",
+    });
+  }
+}
+function pro() {
+  if(y.matches){
+    document.documentElement.scrollTo({
+      top: 3340,
+      behavior: "smooth",
+    });
+  }
+  else{
+    document.documentElement.scrollTo({
+      top: 3300,
+      behavior: "smooth",
+    });
+  }
+}
+// media query
 
 // var modal = document.getElementById("myModal");
 
