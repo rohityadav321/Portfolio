@@ -5,11 +5,11 @@ body {
     box-sizing: border-box;
   }
   .section3{
-      background: black;
+    background: rgba(74, 199, 193, 0.63);
       position: absolute;
-      top: 1100px;
       left: 0;
       width: 100%;
+      z-index: -1;
   }
   /* Scrollbar */
 ::-webkit-scrollbar{
@@ -32,7 +32,7 @@ body {
 .timeline{
     max-width: 1200px;
     position: relative;
-    margin: 40px;
+    margin: 40px  auto;
     color: black;
 }  
 .timeline:after{
@@ -155,19 +155,9 @@ body {
     }
 }
 @media screen and (min-width: 501px) and (max-width: 900px){
-    .section3{
-        position: absolute;
-        top: 1400px;
-        width: 100%;
-    }
 
 }
 @media screen and (max-width: 500px){
-    .section3{
-        position: absolute;
-        top: 1300px;
-        width: 100%;
-    }
     /* Scrollbar */
 }
 

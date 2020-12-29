@@ -61,8 +61,8 @@
     position: absolute;
     width: 100%;
     left: 0;
-    background: black;
-    color: #fff;
+    background: rgba(74, 199, 193, 0.63);
+    color: #000;
     height: auto;
 }
 .proex{
@@ -78,7 +78,7 @@
     position: relative;
     width: 200px;
     height: auto;
-    background: #333;
+    background: rgb(0, 119, 167);
     border-radius: 24px;
     margin: 20px;
     text-align: center;
