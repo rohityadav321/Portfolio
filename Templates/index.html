@@ -11,25 +11,43 @@
     <link rel="stylesheet" href="{% static '/css/timeline.css' %}">
     <link rel="stylesheet" href="{% static '/css/skills.css' %}">
     <link rel="stylesheet" href="{% static '/FontAws/css/all.css' %}">
+    <link rel="stylesheet" href="{% static '/css/ham.css' %}">
     
     <title>Rohit Yadav</title>
 </head>
 
 <body>
-    <div class="logo">
-        <img src="{{baseUrl}}/{{ Logo.img }}" alt="logo" srcset="">
-    </div>
     <div id="flex-Box" id="top">
         <div class="section">
             <div class="container">
                 <div class="in-section">
-                    <div class="section-flex-box">
-                        <div class="nav"><a href="#">Home</a></div>
-                        <div class="nav"><a href="#about">About me</a></div>
-                        <div class="nav"><a href="#education">Education</a></div>
-                        <div class="nav"><a href="#skill">Skills</a></div>
-                        <div class="nav"><a href="#exp">Experience & Projects </a></div>
+                    <div class="logo">
+                        <img src="{{baseUrl}}/{{ Logo.img }}" alt="logo" srcset="">
                     </div>
+                    <div class="ham">
+                        <input type="checkbox" class="toggler"/>
+                        <div class="hamb">
+                            <div></div>
+                        </div>
+                    <div class="section-flex-box ham-nav">
+                        <div class="nav"><a href="#home" onclick="home()">Home</a></div>
+                        <div class="nav"><a href="#about-me" onclick="about()">About me</a></div>
+                        <div class="nav"><a href="#edu"onclick="edu()">Education</a></div>
+                        <div class="nav"><a href="#skills"onclick="skill()">Skills</a></div>
+                        <div class="nav"><a href="#pro"onclick="pro()">Projects </a></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="container">
+                <div class="insec">
+            <div class="name">
+             <h2>Rohit Yadav</h2>
+             <h3>Web Developer</h3>
+            </div>
+            <img src="static/image/program.svg" alt="">
                 </div>
             </div>
         </div>
@@ -49,7 +67,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <div class="section3" id="education">
             <div class="container">
                 <h3>Education</h3>
