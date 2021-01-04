@@ -129,7 +129,7 @@
   /* Modal Content */
   .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #fff;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -138,11 +138,13 @@
     width: 60%;
     height: auto;
     animation: fly 0.5s ease-in-out;
+    z-index: 5;
   }
   @keyframes  fly{
         from {top:-300px; opacity:0} 
         to {top:0; opacity:1}
   }
+
   /* The Close Button */
   .close {
     color: #aaaaaa;
@@ -197,6 +199,44 @@
 }
 .fa-android{
     color:rgb(15, 230, 15)
+}
+.fa-instagram{
+    background: linear-gradient(45deg,yellow,red,blue);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+li>a>.fab{
+    font-size: 40px;
+    font-weight: bold;
+}
+.fa-hackerrank{
+    color: rgb(14, 216, 14);
+}
+.fa-facebook{
+    color: white;
+    background: blue;
+    border-radius: 50%;
+}
+.fa-linkedin{
+    color: blue;
+    background: #fff;
+    border-radius: 3px;
+}
+.fa-youtube-square{
+    background: #fff;
+    color: red;
+    border-radius: 6px;
+}
+.fa-github{
+    color: black;
+    background: white;
+    border-radius: 50%;
+}
+a>.fab,.con{
+    transition: 0.3s;
+}
+a>.fab:hover{
+    font-size: 46px;
 }
 @media screen and (max-width: 600px) {
     

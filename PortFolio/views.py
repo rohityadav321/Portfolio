@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import logo,Skills,Project
+from datetime import datetime
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -89,4 +91,22 @@ def home(request):
      
     Projects = [projects1,projects2,projects3]
     
-    return render(request,'index.html',{'Skill':Skill,'Logo':Logo, 'Projects':Projects})
+    if request.method == "POST":
+           
+        email = request.POST['email']
+        name = request.POST['name']
+        phone = request.POST["phone"]
+        message = request.POST["message"]
+        full_Message = ("From : " + email
+                    + "\nName : " + name 
+                    + "\nContact No : " + phone
+                    + "\nMessage : " + message)
+        send_mail(
+                    name,
+                    full_Message,
+                    email,
+                    ['rohitbyadav786@gmail.com'],
+        )
+        return render(request, 'index.html', {'Skill':Skill,'Logo':Logo, 'Projects':Projects,'senders_name': name})
+    else:
+        return render(request,'index.html',{'Skill':Skill,'Logo':Logo, 'Projects':Projects})

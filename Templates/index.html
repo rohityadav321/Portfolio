@@ -1,5 +1,6 @@
 {% load static %}
 {% static "image" as baseUrl %}
+
 {% load instagram_client %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,45 +10,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/css/index.css' %}">
     <link rel="stylesheet" href="{% static '/css/timeline.css' %}">
+    <link rel="stylesheet" href="{% static '/css/form.css' %}">
     <link rel="stylesheet" href="{% static '/css/skills.css' %}">
     <link rel="stylesheet" href="{% static '/FontAws/css/all.css' %}">
     <link rel="stylesheet" href="{% static '/css/ham.css' %}">
-    
-    <title>Rohit Yadav</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/css/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/css/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/css/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static '/css/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static '/css/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Rohit Yadav | Web developer</title>
 </head>
 
 <body>
     <div id="flex-Box" id="top">
-        <div class="section">
+        <div class="section" id="home">
             <div class="container">
                 <div class="in-section">
-                    <div class="logo">
-                        <img src="{{baseUrl}}/{{ Logo.img }}" alt="logo" srcset="">
+                    <div class="logo" id="logo">
+                        <span> <a href="/"> RY</a></span>
                     </div>
-                    <div class="ham">
-                        <input type="checkbox" class="toggler"/>
+                    <div class="ham" id="toggler">
+                        <input type="checkbox" class="toggler" />
                         <div class="hamb">
                             <div></div>
                         </div>
-                    <div class="section-flex-box ham-nav">
-                        <div class="nav"><a href="#home" onclick="home()">Home</a></div>
-                        <div class="nav"><a href="#about-me" onclick="about()">About me</a></div>
-                        <div class="nav"><a href="#edu"onclick="edu()">Education</a></div>
-                        <div class="nav"><a href="#skills"onclick="skill()">Skills</a></div>
-                        <div class="nav"><a href="#pro"onclick="pro()">Projects </a></div>
+                        <div class="section-flex-box ham-nav" id="nav">
+                            <div class="nav"><a href="#home">Home</a></div>
+                            <div class="nav"><a href="#about">About me</a></div>
+                            <div class="nav"><a href="#education">Education</a></div>
+                            <div class="nav"><a href="#skill">Skills</a></div>
+                            <div class="nav"><a href="#exp">Projects </a></div>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
-        <div class="sec">
+        <div class="sec" id="sec">
             <div class="container">
+                <div style="color: black; padding:10px;">
+                    {% if senders_name %}
+                    <div class="alert">
+                        Thanks <b>{{senders_name}}</b> for connecting with us
+                        we will reply shortly
+                    </div>
+                    {%endif%}
+                </div>
                 <div class="insec">
-            <div class="name">
-             <h2>Rohit Yadav</h2>
-             <h3>Web Developer</h3>
-            </div>
-            <img src="static/image/program.svg" alt="">
+                    <div class="name">
+                        <h2>Rohit Yadav</h2>
+                        <h3>Web Developer</h3>
+                    </div>
+                    <img src="static/image/program.svg" alt="">
                 </div>
             </div>
         </div>
@@ -67,106 +83,177 @@
                     </div>
                 </div>
             </div>
-        <div class="section3" id="education">
-            <div class="container">
-                <h3>Education</h3>
-                <div class="timeline">
-                    <div class="econtainer eleft">
-                        <div class="content">
-                            <h3>2014</h3>
-                            <hr>
-                            <p>
-                                <b>SSC</b> <br>
-                                <b>Board</b>:- Maharashtra Board <br>
-                                <b>Grade</b>:- 86% <br>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="econtainer eright">
-                        <div class="content">
-                            <h3>2016</h3>
-                            <hr>
-                            <p>
-                                <b>HSC</b> <br>
-                                <b>Board</b>:- Maharashtra Board <br>
-                                <b>Grade</b>:- 70.92% <br>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="econtainer eleft">
-                        <div class="content">
-                            <h3>2020</h3>
-                            <hr>
-                            <p>
-                                <b>B.Tech</b> Persuing <br>
-                                <b>University</b>:- Mumbai University <br>
-                                <b>CGPA</b>:- 6.88/10
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section4" id="skill">
+            <div class="section3" id="education">
                 <div class="container">
-                    <H3>Skills</H3>
-                    <div class="insec4">
-                        {% for skill in Skill %}
-                        <div class="card">
-                            <div class="front">
-                                <div class="img">
-                                    <img src="{{baseUrl}}/{{ skill.img }}" alt="{{skill.name}}" srcset="">
-                                </div>
-                                <h3>{{skill.name}}</h3>
-                            </div>
-                            <div class="back">
-                                <h3>{{skill.name}}</h3>
+                    <h3>Education</h3>
+                    <div class="timeline">
+                        <div class="econtainer eleft">
+                            <div class="content">
+                                <h3>2014</h3>
                                 <hr>
-                                <h4>Experience Level</h4>
-                                <p>{{skill.exp}}</p>
+                                <p>
+                                    <b>SSC</b> <br>
+                                    <b>Board</b>:- Maharashtra Board <br>
+                                    <b>Grade</b>:- 86% <br>
+                                </p>
                             </div>
                         </div>
-                        {% endfor %}
+                        <div class="econtainer eright">
+                            <div class="content">
+                                <h3>2016</h3>
+                                <hr>
+                                <p>
+                                    <b>HSC</b> <br>
+                                    <b>Board</b>:- Maharashtra Board <br>
+                                    <b>Grade</b>:- 70.92% <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="econtainer eleft">
+                            <div class="content">
+                                <h3>2020</h3>
+                                <hr>
+                                <p>
+                                    <b>B.Tech</b> Persuing <br>
+                                    <b>University</b>:- Mumbai University <br>
+                                    <b>CGPA</b>:- 6.88/10
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="section5" id="exp">
+                <div class="section4" id="skill">
                     <div class="container">
-                        <h3>Projects</h3>
-                        <div class="proex">
-                            {% for pros in Projects %}
-                            <div class="projects p1">
-                                <h4>{{pros.year}}</h4>
-                                <p>{{pros.topic}}</p>
-                                <button  id="mybtn"  onclick="myfun('{{pros}}')" class="btn">Know More</button>
-                            </div>
-                            <div id="myModal-{{pros}}" class="modal">
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                  <span class="close" onclick="closefun('{{pros}}')">&times;</span>
-                                  <h4>{{pros.topic}}</h4>
-                                  <div class="details">
-                                    <div class="indet">
-                                        <p>{{pros.detail}}</p>
-                                    <i class="fab fa-{{pros.icon1}}"></i>
-                                    <i class="fab fa-{{pros.icon2}}"></i>
-                                    <i class="fab fa-{{pros.icon3}}"></i>
-                                    <i class="fab fa-{{pros.icon4}}"></i>
-                                    <i class="fas fa-{{pros.icon5}}"></i>
+                        <H3>Skills</H3>
+                        <div class="insec4">
+                            {% for skill in Skill %}
+                            <div class="card">
+                                <div class="front">
+                                    <div class="img">
+                                        <img src="{{baseUrl}}/{{ skill.img }}" alt="{{skill.name}}" srcset="">
                                     </div>
-                                    <img src="/static/image/dev.svg" alt="">
-                                  </div>
+                                    <h3>{{skill.name}}</h3>
                                 </div>
-                              </div>
+                                <div class="back">
+                                    <h3>{{skill.name}}</h3>
+                                    <hr>
+                                    <h4>Experience Level</h4>
+                                    <p>{{skill.exp}}</p>
+                                </div>
+                            </div>
                             {% endfor %}
-                          </div>
+                        </div>
+                    </div>
+                    <div class="section5" id="exp">
+                        <div class="container">
+                            <h3>Projects</h3>
+                            <div class="proex">
+                                {% for pros in Projects %}
+                                <div class="projects p1">
+                                    <h4>{{pros.year}}</h4>
+                                    <p>{{pros.topic}}</p>
+                                    <button id="mybtn" onclick="myfun('{{pros}}')" class="btn">Know More</button>
+                                </div>
+                                <div id="myModal-{{pros}}" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close" onclick="closefun('{{pros}}')">&times;</span>
+                                        <h4>{{pros.topic}}</h4>
+                                        <div class="details">
+                                            <div class="indet">
+                                                <p>{{pros.detail}}</p>
+                                                <i class="fab fa-{{pros.icon1}}"></i>
+                                                <i class="fab fa-{{pros.icon2}}"></i>
+                                                <i class="fab fa-{{pros.icon3}}"></i>
+                                                <i class="fab fa-{{pros.icon4}}"></i>
+                                                <i class="fas fa-{{pros.icon5}}"></i>
+                                            </div>
+                                            <img src="/static/image/dev.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="container">
+                                <div class="foot-in">
+                                    <div class="contact">
+                                        <button class="con" onclick="mycon()" title="Contact Me">Contact Me</button>
+                                    </div>
+                                    <div id="myCon" class="modal">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close" onclick="closeBtn()">&times;</span>
+                                            <h4>Contact me</h4>
+
+                                            <div class="details">
+                                                <div class="form-indet">
+                                                    <form class="form" action="home" method="POST">
+                                                        {% csrf_token %}
+                                                        <div class="input">
+                                                            <input type="text" name="name" id="name" required>
+                                                            <span>Name</span>
+                                                        </div>
+                                                        <div class="input">
+                                                            <input type="email" name="email" id="email" required>
+                                                            <span>Email</span>
+                                                        </div>
+                                                        <div class="input">
+                                                            <input type="number" name="phone" id="contact" required>
+                                                            <span>Contact</span>
+                                                        </div>
+                                                        <div class="input">
+                                                            <textarea name="message" rows="5" cols="30" id="message"
+                                                                required></textarea>
+                                                            <span>Message</span>
+                                                        </div>
+                                                        <div class="input">
+                                                            <input type="submit" name="submit" required>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="social">
+                                        <div class="me">
+                                            <span>
+                                                <div class="lefthr">
+                                                    <hr>
+                                                </div>Get In Touch <div class="righthr">
+                                                    <hr>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        <div class="social-account">
+                                            <li><a href="https://www.instagram.com/_20hity_/"><i class="fab fa-instagram" title="Instagram"></i></a></li>
+                                            <li><a href="https://www.hackerrank.com/rohitbyadav786"><i class="fab fa-hackerrank" title="Hackerrank"></i></a></li>
+                                            <li><a href="https://www.facebook.com/rbydv"><i class="fab fa-facebook" title="Facebook"></i></a></li>
+                                            <li><a href="https://github.com/rohityadav321"><i class="fab fa-github" title="Github"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/in/rohit-yadav-882b39118/"><i class="fab fa-linkedin" title="Linkedin"></i></a></li>
+                                            <li><a href="https://www.youtube.com/channel/UC4pGzK0xDO2sHp_pJPv3fTg"><i class="fab fa-youtube-square" title="Youtube"></i></a>
+                                            </li>
+                                        </div>
+                                        <div class="copy">
+                                            <p>&copy; {{year}} Rohit Yadav</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
-       
-            
+
+
             <button onclick="topFunction()" id="myBtn" title="Go to top"></button>
             <script src="{% static '/js/index.js' %}">
             </script>
+            <script src="{% static '/js/button.js' %}">
+            </script>
 </body>
+
 </html>

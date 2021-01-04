@@ -1,5 +1,10 @@
 //Get the button
 const mybutton = document.getElementById("myBtn");
+const sec = document.getElementById("home");
+const nav = document.getElementById("nav");
+const logo = document.getElementById("logo");
+
+
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
@@ -9,10 +14,23 @@ window.onscroll = function () {
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.bottom = 50+"px";
+    sec.style.height = 75+"px";
+    nav.style.padding = 20+"px "+ 0 ;
+    logo.style.marginTop = 20+"px";
+    sec.style.transition = "all "+ 0.4+"s "+" ease-in-out";
+    nav.style.transition = "all "+ 0.4+"s "+" ease-in-out";
+    logo.style.transition = "all "+ 0.4+"s "+" ease-in-out";
   } else {
     mybutton.style.bottom = "-"+10+"%";
+    sec.style.height = 100+"px";
+    nav.style.padding = 30+"px "+ 0 ;
+    logo.style.marginTop = 30+"px";
+    sec.style.transition = "all "+ 0.4+"s "+" ease-in-out";
+    nav.style.transition = "all "+ 0.4+"s "+" ease-in-out";
+    logo.style.transition = "all "+ 0.4+"s "+" ease-in-out";
   }
 }
+
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction(){
@@ -21,76 +39,7 @@ function topFunction(){
     behavior: "smooth",
   });
 }
-function home() {
-  document.documentElement.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}
-var x= window.matchMedia("(max-width:650px)");
-var y=window.matchMedia("(min-width:651px) and (max-width:900px)");
 
-function about() {
-  if(y.matches){
-    document.documentElement.scrollTo({
-      top: 430,
-      behavior: "smooth",
-    });
-  }
-  else if(x.matches){
-    document.documentElement.scrollTo({
-      top: 480,
-      behavior: "smooth",
-    });
-  }
-  else{
-    document.documentElement.scrollTo({
-      top: 570,
-      behavior: "smooth",
-    });
-  }
-}
-function edu() {
-  if(y.matches){
-    document.documentElement.scrollTo({
-      top: 1040,
-      behavior: "smooth",
-    });
-  }
-  else{
-    document.documentElement.scrollTo({
-      top: 1000,
-      behavior: "smooth",
-    });
-  }
-}function skill() {
-  if(y.matches){
-    document.documentElement.scrollTo({
-      top: 1750,
-      behavior: "smooth",
-    });
-  }
-  else{
-    document.documentElement.scrollTo({
-      top: 1670,
-      behavior: "smooth",
-    });
-  }
-}
-function pro() {
-  if(y.matches){
-    document.documentElement.scrollTo({
-      top: 3340,
-      behavior: "smooth",
-    });
-  }
-  else{
-    document.documentElement.scrollTo({
-      top: 3300,
-      behavior: "smooth",
-    });
-  }
-}
 // media query
 
 // var modal = document.getElementById("myModal");
@@ -104,18 +53,19 @@ function pro() {
 // When the user clicks the button, open the modal 
 function myfun(pros) {
   document.getElementById("myModal-"+pros).style.display = "block";
+  document.body.style.overflow="hidden";
+  
 }
-
 // When the user clicks on <span> (x), close the modal
 function closefun(pros) {
   document.getElementById("myModal-"+pros).style.display = "none";
-  
+  document.body.style.overflow="visible";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(pros) {
   if (pros.target == document.getElementById("myModal-"+pros)) {
     document.getElementById("myModal-"+pros).style.display = "none";
- 
+    document.body.style.overflow="visible";
   }
 }

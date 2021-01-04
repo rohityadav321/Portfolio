@@ -1,0 +1,87 @@
+.form {
+  width: 100%;
+  position: relative;
+}
+.input {
+  position: relative;
+  width: 60%;
+  height: 40px;
+  top: 0;
+  margin: 20px;
+}
+.input > input,
+.input > textarea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  font-size: 15px;
+  background: transparent;
+  z-index: 1;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 15px 15px;
+}
+.input > span {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  z-index: 0;
+  transition: 0.3s;
+}
+input:focus + span,
+input:valid + span {
+  font-size: 12px;
+  top: 0;
+  left: 8px;
+  z-index: 1;
+}
+textarea:focus + span,
+textarea:valid + span {
+  font-size: 12px;
+  top: 0;
+  left: 8px;
+  z-index: 1;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="submit"] {
+  padding: 0;
+  width: 60%;
+  align-self: center;
+  cursor: pointer;
+  border: 1px solid;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+input[type="submit"]:hover {
+  background: rgba(12, 12, 12, 0.705);
+  color: #fff;
+}
+.form-indet {
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+}
+
+@media screen and (max-width:800px){
+    .input {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        top: 0;
+        margin: 20px;
+      }
+}

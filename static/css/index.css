@@ -2,6 +2,9 @@ body {
   font-family: sans-serif;
   color: #fff;
 }
+html {
+  scroll-behavior: smooth;
+}
 * {
   box-sizing: border-box;
 }
@@ -14,12 +17,11 @@ body {
   position: absolute;
   z-index: 1;
   float: left;
-  top: -20px;
+  margin-top: 30px;
   width: 200px;
 }
-.logo > img {
-  width: 100%;
-  height: 100%;
+.logo > span > a {
+  font-size: 35px;
 }
 
 /* HOME */
@@ -30,29 +32,25 @@ body {
   height: auto;
 }
 .section {
-  width: 100vw;
+  width: 100%;
   height: 100px;
   background: rgba(0, 0, 0, 0.7);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 .in-section {
   width: 100%;
 }
-.section-flex-box {
-  display: flex;
-  flex-direction: row;
-  float: right;
-  padding: 30px 0;
-  margin: 0 5px 0 0;
-}
+
 a {
   color: #fff;
   text-decoration: none;
   font-size: 20px;
   font-weight: 50;
   z-index: 3;
+  width: 100%;
   padding: 5px;
 }
 .section-flex-box > .nav {
@@ -63,6 +61,7 @@ a {
   position: relative;
   border-radius: 6px;
   box-shadow: 0 0 3px 0 rgb(116, 114, 114);
+  text-align: center;
 }
 
 .nav:hover {
@@ -115,11 +114,9 @@ a {
   left: 0;
   color: black;
   width: 100%;
-  z-index: -1;
 }
 .section2-flex-box {
   display: flex;
-  z-index: 1;
   width: 100%;
   margin-top: 10px;
   padding: 10px;
@@ -127,11 +124,13 @@ a {
 .left {
   width: 50%;
   word-spacing: 4px;
+  z-index: -1;
 }
 .right {
   width: 50%;
   margin-top: 10px;
   padding: 10px;
+  z-index: -1;
 }
 .right > img {
   width: 100%;
@@ -177,6 +176,10 @@ a {
 }
 /* Education */
 @media screen and (max-width: 650px) {
+  .logo {
+    width: 150px;
+    top: 5px;
+  }
   .insec {
     width: 100%;
   }
@@ -222,6 +225,13 @@ a {
     width: 100%;
   }
   /* edu */
+
+  .lefthr {
+    display: none;
+  }
+  .righthr {
+    display: none;
+  }
 }
 @media screen and (min-width: 651px) and (max-width: 900px) {
   .logo {
